@@ -7,7 +7,6 @@
 // ===================
 
 $font-color: #FFF;
-$light-color: #DDD;
 $bg-color: #2C2D2E;
 $darker-bg-color: #101010;
 $target-bg-color: #484343;
@@ -124,6 +123,15 @@ a:hover {
   color: inherit;
 }
 
+button {
+  border: 0;
+  outline: none;
+  background: $font-color;
+  font-family: $font-stack;
+  font-weight: 300;
+  color: bg-color;
+}
+
 
 // ########################
 // SPECIFIC STYLES/LAYOUT
@@ -158,6 +166,10 @@ footer {
   background: $darker-bg-color;
 }
 
+.signature {
+  color: $action-color;
+}
+
 
 // ===================
 // INDIVIDUAL PAGES
@@ -166,7 +178,7 @@ footer {
 // ------ HOME ------
 
 .targets {
-  margin: 90px 0;
+  margin: 90px 0 40px;
 }
 
 .target {
