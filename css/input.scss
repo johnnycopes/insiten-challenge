@@ -6,12 +6,14 @@
 // VARIABLES
 // ===================
 
-$font-color: #212121;
+$font-color: #FFF;
 $light-color: #DDD;
-$bg-color: #FFF;
-$action-color: #FB0006;
+$bg-color: #2C2D2E;
+$darker-bg-color: #101010;
+$target-bg-color: #484343;
+$action-color: #0193FF;
 
-$font-stack: 'Lato', 'HelveticaNeue', 'Helvetica Neue', 'Helevtica', 'Lucida Grande', 'Trebuchet MS', sans-serif;
+$font-stack: 'Yantramanav', 'HelveticaNeue', 'Helvetica Neue', 'Helevtica', 'Lucida Grande', 'Trebuchet MS', sans-serif;
 
 $transition: all 175ms ease-in-out;
 
@@ -72,19 +74,40 @@ $transition: all 175ms ease-in-out;
 
 body {
   color: $font-color;
+  background: $bg-color;
   font-family: $font-stack;
   font-size: 1rem;
-  // font-weight: 300;
+  font-weight: 300;
 }
 
 html, body {
   position: relative;
 }
 
-h1, h2, h3, h4, h5, h6 {}
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.157em;
+}
+
+h2 {font-size: 2.369em;}
+
+h3 {font-size: 1.777em;}
+
+h4 {font-size: 1.333em;}
+
+small, .font-small {font-size: 0.75em;}
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 img {
@@ -109,20 +132,77 @@ a:hover {
 // REPEATED RULES
 // ===================
 
+.container {
+  width: 70%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 // ===================
 // HEADER/FOOTER
 // ===================
 
-header {}
+header {
+  @extend .fixed;
+  top: 0;
+  padding: 10px 0;
+  z-index: 1;
+  text-align: center;
+  background: $darker-bg-color;
+}
 
-footer {}
+footer {
+  padding: 10px 0;
+  text-align: right;
+  background: $darker-bg-color;
+}
 
 
 // ===================
 // INDIVIDUAL PAGES
 // ===================
 
-// ------ HOME SPLASH PAGE ------
+// ------ HOME ------
+
+.targets {
+  margin: 90px 0;
+}
+
+.target {
+  margin-bottom: 1rem;
+  padding: 20px;
+  background: $target-bg-color;
+}
+
+.target-tab {
+  @extend .flex-center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.target-name {
+  display: inline-block;
+  font-weight: 100;
+  margin: 0;
+}
+
+.target-info {
+  padding: 1rem;
+  li { margin-bottom: 1.5rem; }
+  li:last-of-type { margin-bottom: 0; }
+  h4 { margin: 0; }
+}
+
+.category {
+  span {
+    display: block;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  p { margin: 0; }
+}
+
+
 
 
 // ------ WORK PAGE ------

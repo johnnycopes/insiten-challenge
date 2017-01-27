@@ -1,3 +1,33 @@
 <ul class="targets">
-    <li ng-repeat="target in targets">{{target.name}}</li>
+    <li class="target" ng-repeat="target in targets">
+        <div class="target-tab">
+            <h3 class="target-name">{{target.name}}</h3>
+            <div class="buttons">
+                <button type="button" ng-click="edit(target)">Edit</button>
+                <button type="button" ng-click="delete(target)">Delete</button>
+            </div>
+        </div>
+        <hr>
+        <div class="target-info">
+            <ul>
+                <li class="category">
+                    <span>Current status:</span>
+                    <p>{{target.status}}</p>
+                </li>
+                <li class="category">
+                    <span>Description:</span>
+                    <p>{{target.companyInfo}}</p>
+                </li>
+                <li class="category">
+                    <span>Key contacts:</span>
+                    <p>{{target.keyContacts}}</p>
+                </li>
+                <li class="category">
+                    <span>Financial performance:</span>
+                    <p>{{target.financialPerformance}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </li>
 </ul>

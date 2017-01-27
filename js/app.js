@@ -81,6 +81,10 @@ app.factory('storage', function () {
 
 app.controller('HomeController', function($rootScope, $scope, $stateParams, $state, storage) {
   $scope.targets = storage.targets;
+
+  $scope.expand = function(target) {
+
+  }
 });
 
 
