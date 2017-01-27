@@ -1,3 +1,59 @@
+.fixed {
+  width: 100%;
+  position: fixed; }
 
+.flex-center {
+  display: flex;
+  align-items: center; }
+
+.fade.ng-enter {
+  transition: 350ms linear all;
+  opacity: 0; }
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity: 1; }
+
+.fade.ng-leave {
+  transition: 0ms linear all;
+  opacity: 1; }
+
+.fade.ng-leave.ng-leave-active {
+  opacity: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  color: #212121;
+  font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Helevtica", "Lucida Grande", "Trebuchet MS", sans-serif;
+  font-size: 1rem; }
+
+html, body {
+  position: relative; }
+
+ul {
+  list-style: none; }
+
+img {
+  display: block; }
+
+a {
+  display: block;
+  text-decoration: none; }
+
+a:hover {
+  color: inherit; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.cf::after {
+  content: "";
+  display: block;
+  clear: both; }
 
 /*# sourceMappingURL=styles.css.map */

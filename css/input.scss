@@ -1,0 +1,168 @@
+// ########################
+// GLOBAL STYLES/LAYOUT
+// ########################
+
+// ===================
+// VARIABLES
+// ===================
+
+$font-color: #212121;
+$light-color: #DDD;
+$bg-color: #FFF;
+$action-color: #FB0006;
+
+$font-stack: 'Lato', 'HelveticaNeue', 'Helvetica Neue', 'Helevtica', 'Lucida Grande', 'Trebuchet MS', sans-serif;
+
+$transition: all 175ms ease-in-out;
+
+
+// ===================
+// EXTENDED CLASSES
+// ===================
+
+.fixed {
+  width: 100%;
+  position: fixed;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+
+// ===================
+// ANIMATIONS
+// ===================
+
+// page transitions
+.fade.ng-enter {
+  transition: 350ms linear all;
+  opacity: 0;
+
+}
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.fade.ng-leave {
+  transition: 0ms linear all;
+  opacity: 1;
+}
+.fade.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+
+// ===================
+// GLOBAL TAGS
+// ===================
+
+* {
+  box-sizing: border-box;
+}
+
+// html, body {
+//   height: 100%;
+// }
+
+// html {
+//   font-size: 85%;
+// }
+
+body {
+  color: $font-color;
+  font-family: $font-stack;
+  font-size: 1rem;
+  // font-weight: 300;
+}
+
+html, body {
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
+
+// ########################
+// SPECIFIC STYLES/LAYOUT
+// ########################
+
+// ===================
+// REPEATED RULES
+// ===================
+
+// ===================
+// HEADER/FOOTER
+// ===================
+
+header {}
+
+footer {}
+
+
+// ===================
+// INDIVIDUAL PAGES
+// ===================
+
+// ------ HOME SPLASH PAGE ------
+
+
+// ------ WORK PAGE ------
+
+
+// ------ PROJECT PAGE ------
+
+
+// ------ SLIDESHOW PAGE ------
+
+
+// ------ ABOUT PAGE ------
+
+
+// ------ MISC PAGE ------
+
+
+
+
+// ===================
+// UTILITY CLASSES
+// ===================
+
+.fl { float: left; }
+.fr { float: right; }
+.cf::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+// ########################
+// MEDIA QUERIES
+// ########################
+
+@media screen and (min-width: 340px) {}
+
+@media screen and (min-width: 420px) {}
+
+@media screen and (min-width: 620px) {}
+
+@media screen and (min-width: 1020px) {}

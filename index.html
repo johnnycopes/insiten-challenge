@@ -4,14 +4,59 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Insiten challenge</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/app.js" charset="utf-8"></script>
+    <title>Insiten Challenge</title>
 </head>
 
-<body>
+<body ng-app="InsitenChallenge">
+    <header>
+        <div class="container">
+            <ul>
+                <!-- <li>
+                    <a ui-sref="home" class="nav-link">Home</a>
+                </li>
+                <li>
+                    <a ui-sref="work" class="nav-link"></a>
+                </li>
+                <li>
+                    <a ui-sref="about" class="nav-link">about</a>
+                </li>
+                <li>
+                    <a ui-sref="misc" class="nav-link">t.t.i.l.</a>
+                </li> -->
+            </ul>
+        </div>
+    </header>
 
+    <div class="container">
+        <main ui-view class="fade"></main>
+    </div>
+
+    <footer ng-show="isNormalPage">
+        <div class="container cf">
+            <ul>
+                <!-- <li>
+                    <a href="mailto:risegal4@gmail.com" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/rsegal" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/riiyaack/" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/kanyewest" target="_blank"></a>
+                </li> -->
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="js/angular-animate.min.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
 </body>
 
 </html>
