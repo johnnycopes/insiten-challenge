@@ -12,7 +12,7 @@
             <ul>
                 <li class="category">
                     <span>Current status:</span>
-                    <p>{{target.status}}</p>
+                    <p ng-class="{'pending-approval': target.status === 'pending approval', 'researching': target.status === 'researching', 'approved': target.status === 'approved', 'declined': target.status === 'declined'}" class="status">{{target.status}}</p>
                 </li>
                 <li class="category">
                     <span>Description:</span>
@@ -20,7 +20,9 @@
                 </li>
                 <li class="category">
                     <span>Key contacts:</span>
-                    <p>{{target.keyContacts}}</p>
+                    <ul class="key-contacts">
+                        <li ng-repeat="contact in target.keyContacts">{{contact}}</li>
+                    </ul>
                 </li>
                 <li class="category">
                     <span>Financial performance:</span>

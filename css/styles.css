@@ -28,14 +28,14 @@ body {
   color: #FFF;
   background: #2C2D2E;
   font-family: "Yantramanav", "HelveticaNeue", "Helvetica Neue", "Helevtica", "Lucida Grande", "Trebuchet MS", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300; }
 
 html, body {
   position: relative; }
 
-p {
-  margin-bottom: 1.3em; }
+hr {
+  border: 1px solid gray; }
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
@@ -55,15 +55,15 @@ h3 {
 h4 {
   font-size: 1.333em; }
 
-small, .font-small {
-  font-size: 0.75em; }
-
 ul {
   list-style: none;
   padding: 0; }
 
 img {
   display: block; }
+
+p {
+  margin-bottom: 1.3em; }
 
 a {
   display: block;
@@ -118,9 +118,20 @@ footer {
 .category span {
   display: block;
   font-style: italic;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  font-size: 1rem; }
 .category p {
   margin: 0; }
+
+.status {
+  display: inline-block;
+  padding: 5px; }
+
+.key-contacts {
+  list-style: circle;
+  padding-left: 20px; }
+  .key-contacts li {
+    margin: 0; }
 
 .fl {
   float: left; }
@@ -132,5 +143,17 @@ footer {
   content: "";
   display: block;
   clear: both; }
+
+.researching {
+  background: #C1822C; }
+
+.pending-approval {
+  background: #245FA4; }
+
+.approved {
+  background: #48A843; }
+
+.declined {
+  background: #D03B3B; }
 
 /*# sourceMappingURL=styles.css.map */
