@@ -16,22 +16,19 @@
             <a href="https://insiten.com/" target="_blank">
                 <img src="img/insiten_logo.png" alt="Insiten company logo">
             </a>
-            <button>
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                <span>Add new target</span>
-            </button>
+            <div class="links">
+                <a class="home" ui-sref="home">Home</a>
+                <button ui-sref="new_target">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <span>Add new target</span>
+                </button>
+            </div>
         </div>
     </header>
 
     <div class="container">
         <main ui-view class="fade"></main>
     </div>
-
-    <footer>
-        <div class="container cf">
-            <a class="signature" href="https://johnnycopes.github.io/" target="_blank">made by johnnycopes</a>
-        </div>
-    </footer>
 
     <!-- JS -->
     <script src="js/angular.min.js" charset="utf-8"></script>

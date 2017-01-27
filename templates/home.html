@@ -1,41 +1,44 @@
-<ul class="targets">
-    <li class="target" ng-repeat="target in targets | orderBy: 'name'">
-        <div class="target-tab">
-            <h3 class="target-name">{{target.name}}</h3>
-            <div class="buttons">
-                <button type="button" ng-click="edit(target)">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                    <span>Edit</span>
-                </button>
-                <button type="button" ng-click="delete(target)">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    <span>Delete</span>
-                </button>
+<div class="page-wrapper">
+    <ul class="targets">
+        <li class="target fade" ng-repeat="target in targets | orderBy: 'name'">
+            <div class="target-tab">
+                <h3 class="target-name">{{target.name}}</h3>
+                <div class="buttons">
+                    <button type="button" ng-click="edit(target)">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <span>Edit</span>
+                    </button>
+                    <button type="button" ng-click="delete(target)">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                        <span>Delete</span>
+                    </button>
+                </div>
             </div>
-        </div>
-        <hr>
-        <div class="target-info">
-            <ul>
-                <li class="category">
-                    <span>Current status:</span>
-                    <p ng-class="{'pending-approval': target.status === 'pending approval', 'researching': target.status === 'researching', 'approved': target.status === 'approved', 'declined': target.status === 'declined'}" class="status">{{target.status}}</p>
-                </li>
-                <li class="category">
-                    <span>Description:</span>
-                    <p>{{target.companyInfo}}</p>
-                </li>
-                <li class="category">
-                    <span>Key contacts:</span>
-                    <ul class="key-contacts">
-                        <li ng-repeat="contact in target.keyContacts | orderBy: contact">{{contact}}</li>
-                    </ul>
-                </li>
-                <li class="category">
-                    <span>Financial performance:</span>
-                    <p>{{target.financialPerformance}}</p>
-                </li>
-            </ul>
+            <hr>
+            <div class="target-info">
+                <ul>
+                    <li class="category">
+                        <span>Current status:</span>
+                        <p ng-class="{'pending-approval': target.status === 'pending approval', 'researching': target.status === 'researching', 'approved': target.status === 'approved', 'declined': target.status === 'declined'}" class="status">{{target.status}}</p>
+                    </li>
+                    <li class="category">
+                        <span>Description:</span>
+                        <p>{{target.companyInfo}}</p>
+                    </li>
+                    <li class="category">
+                        <span>Key contacts:</span>
+                        <ul class="key-contacts">
+                            <li ng-repeat="contact in target.keyContacts | orderBy: contact">{{contact}}</li>
+                        </ul>
+                    </li>
+                    <li class="category">
+                        <span>Financial performance:</span>
+                        <p>{{target.financialPerformance}}</p>
+                    </li>
+                </ul>
 
-        </div>
-    </li>
-</ul>
+            </div>
+        </li>
+    </ul>
+    <p class="none-message" ng-show="targets.length === 0">No current targets to display!</p>
+</div>

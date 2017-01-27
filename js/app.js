@@ -81,9 +81,45 @@ app.factory('storage', function () {
 
 app.controller('HomeController', function($rootScope, $scope, $stateParams, $state, storage) {
   $scope.targets = storage.targets;
-  $scope.expand = function(target) {
+  $scope.delete = function(target) {
+    let index = $scope.targets.indexOf(target);
+    $scope.targets.splice(index, 1);
+  };
+});
 
-  }
+app.controller('NewTargetController', function($rootScope, $scope, $stateParams, $state, storage) {
+  $scope.targets = storage.targets;
+  $scope.keyContacts = [];
+
+  $scope.addContact = function(contact) {
+    $scope.keyContacts.push(contact);
+    $scope.keyContact = "";
+  };
+
+  $scope.deleteContact = function(contact) {
+    let index = $scope.targets.indexOf(contact);
+    $scope.keyContacts.splice(index, 1);
+  };
+
+  $scope.addNewTarget = function() {
+    if ($scope.keyContacts.length >= 1) {
+      $scope.targets.push({
+        name: $scope.name,
+        status: $scope.status,
+        companyInfo: $scope.description,
+        keyContacts: $scope.keyContacts,
+        financialPerformance: $scope.performance
+      });
+      $scope.name = "";
+      $scope.status = "";
+      $scope.description = "";
+      $scope.keyContacts = [];
+      $scope.performance = "";
+    }
+    else {
+      alert('You must enter at least one key contact');
+    }
+  };
 });
 
 
@@ -99,6 +135,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: 'templates/home.html',
       controller: 'HomeController'
+    })
+  $stateProvider
+    .state({
+      name: 'new_target',
+      url: '/new_target',
+      templateUrl: 'templates/new_target.html',
+      controller: 'NewTargetController'
     })
     ;
 

@@ -1,0 +1,41 @@
+<div class="page-wrapper">
+    <form class="new-target-form" method="post">
+        <div class="form-control">
+            <label for="name">Company name:</label>
+            <input id="name" type="text" ng-model="name">
+        </div>
+        <div class="form-control">
+            <label for="current-status">Current status:</label>
+            <select id="current-status" ng-model="status">
+                <option>researching</option>
+                <option>pending approval</option>
+                <option>approved</option>
+                <option>declined</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="key-contacts">Key contacts:</label>
+            <div class="key-contact-field">
+                <input id="key-contacts" type="text" ng-model="keyContact">
+                <button type="button" ng-click="addContact(keyContact)">Add contact</button>
+            </div>
+            <ul>
+                <li class="key-contact" ng-repeat="contact in keyContacts">
+                    <button class="delete-button" type="button" ng-click="deleteContact(contact)">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                    <span>{{contact}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="form-control">
+            <label for="financial-performance">Financial performance:</label>
+            <input id="financial-performance" type="text" ng-model="performance">
+        </div>
+        <div class="form-control">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="6" ng-model="description"></textarea>
+        </div>
+        <button type="button" ng-click="addNewTarget()">Submit</button>
+    </form>
+</div>

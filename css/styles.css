@@ -1,8 +1,11 @@
+.test {
+  background: red !important; }
+
 .fixed, header {
   width: 100%;
   position: fixed; }
 
-.flex-center, header .container, .target-tab {
+.flex-center, header .container, header .links, .target-tab, .key-contact-field {
   display: flex;
   align-items: center; }
 
@@ -10,7 +13,6 @@
   transition: 350ms linear all;
   opacity: 0; }
 
-/* The finishing CSS styles for the enter animation */
 .fade.ng-enter.ng-enter-active {
   opacity: 1; }
 
@@ -20,6 +22,18 @@
 
 .fade.ng-leave.ng-leave-active {
   opacity: 0; }
+
+.target.ng-enter,
+.target.ng-leave {
+  transition: all 250ms ease-in-out; }
+
+.target.ng-enter,
+.target.ng-leave.ng-leave-active {
+  opacity: 0; }
+
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+  opacity: 1; }
 
 * {
   box-sizing: border-box; }
@@ -95,6 +109,9 @@ button {
   max-width: 960px;
   margin: 0 auto; }
 
+.page-wrapper {
+  margin: 90px 0 40px; }
+
 header {
   top: 0;
   padding: 10px 0;
@@ -103,6 +120,11 @@ header {
   background: #1e1f1f; }
   header .container {
     justify-content: space-between; }
+  header .links {
+    flex-direction: row; }
+  header .home {
+    padding: 10px 20px;
+    color: #FFF; }
   header button {
     background: #0da9ff;
     color: #FFF; }
@@ -113,10 +135,8 @@ footer {
   background: #1e1f1f; }
 
 .signature {
-  color: #0da9ff; }
-
-.targets {
-  margin: 90px 0 40px; }
+  color: #0da9ff;
+  display: inline-block; }
 
 .target {
   margin-bottom: 1rem;
@@ -158,6 +178,49 @@ footer {
   padding-left: 20px; }
   .key-contacts li {
     margin: 0; }
+
+.none-message {
+  text-align: center;
+  padding: 100px 0; }
+
+.new-target-form {
+  max-width: 400px;
+  margin: 0 auto; }
+  .new-target-form button {
+    margin-left: 5px; }
+
+.form-control {
+  margin-bottom: 1rem; }
+  .form-control label {
+    display: block;
+    padding-left: 5px; }
+  .form-control input,
+  .form-control select,
+  .form-control textarea {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 5px solid #1e1f1f; }
+  .form-control input:focus,
+  .form-control select:focus,
+  .form-control textarea:focus {
+    border: 5px solid #0da9ff; }
+
+.key-contact-field {
+  justify-content: space-between; }
+  .key-contact-field input {
+    max-width: 260px;
+    width: 100%; }
+
+.key-contact {
+  margin-right: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  background: #3a3b3c; }
+
+.delete-button {
+  margin: 0 5px 0 0;
+  padding: 5px 10px; }
 
 .fl {
   float: left; }
