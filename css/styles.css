@@ -2,7 +2,7 @@
   width: 100%;
   position: fixed; }
 
-.flex-center, .target-tab {
+.flex-center, header .container, .target-tab {
   display: flex;
   align-items: center; }
 
@@ -26,7 +26,7 @@
 
 body {
   color: #FFF;
-  background: #2C2D2E;
+  background: #1e1f1f;
   font-family: "Yantramanav", "HelveticaNeue", "Helvetica Neue", "Helevtica", "Lucida Grande", "Trebuchet MS", sans-serif;
   font-size: 1.1rem;
   font-weight: 300; }
@@ -35,7 +35,7 @@ html, body {
   position: relative; }
 
 hr {
-  border: 1px solid gray; }
+  border: 1px solid #5c5e60; }
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
@@ -73,12 +73,22 @@ a:hover {
   color: inherit; }
 
 button {
+  padding: 10px 20px;
   border: 0;
   outline: none;
   background: #FFF;
   font-family: "Yantramanav", "HelveticaNeue", "Helvetica Neue", "Helevtica", "Lucida Grande", "Trebuchet MS", sans-serif;
   font-weight: 300;
-  color: bg-color; }
+  color: #1e1f1f;
+  cursor: pointer; }
+
+::selection {
+  background: #0da9ff;
+  color: #FFF; }
+
+::-moz-selection {
+  background: #0da9ff;
+  color: #FFF; }
 
 .container {
   width: 70%;
@@ -90,15 +100,20 @@ header {
   padding: 10px 0;
   z-index: 1;
   text-align: center;
-  background: #101010; }
+  background: #1e1f1f; }
+  header .container {
+    justify-content: space-between; }
+  header button {
+    background: #0da9ff;
+    color: #FFF; }
 
 footer {
   padding: 10px 0;
   text-align: right;
-  background: #101010; }
+  background: #1e1f1f; }
 
 .signature {
-  color: #0193FF; }
+  color: #0da9ff; }
 
 .targets {
   margin: 90px 0 40px; }
@@ -106,7 +121,7 @@ footer {
 .target {
   margin-bottom: 1rem;
   padding: 20px;
-  background: #484343; }
+  background: #3a3b3c; }
 
 .target-tab {
   justify-content: space-between;

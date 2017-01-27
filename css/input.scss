@@ -7,10 +7,10 @@
 // ===================
 
 $font-color: #FFF;
-$bg-color: #2C2D2E;
-$darker-bg-color: #101010;
-$target-bg-color: #484343;
-$action-color: #0193FF;
+$bg-color: #1e1f1f;
+$target-bg-color: #3a3b3c;
+$lighter-bg-color: #5c5e60;
+$action-color: #0da9ff;
 $researching: #C1822C;
 $pending-approval: #245FA4;
 $approved: #48A843;
@@ -87,7 +87,7 @@ html, body {
   position: relative;
 }
 
-hr { border: 1px solid gray; }
+hr { border: 1px solid $lighter-bg-color; }
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
@@ -124,12 +124,14 @@ a:hover {
 }
 
 button {
+  padding: 10px 20px;
   border: 0;
   outline: none;
   background: $font-color;
   font-family: $font-stack;
   font-weight: 300;
-  color: bg-color;
+  color: $bg-color;
+  cursor: pointer;
 }
 
 
@@ -140,6 +142,15 @@ button {
 // ===================
 // REPEATED RULES
 // ===================
+
+::selection {
+  background: $action-color;
+  color: $font-color;
+}
+::-moz-selection {
+  background: $action-color;
+  color: $font-color;
+}
 
 .container {
   width: 70%;
@@ -157,13 +168,23 @@ header {
   padding: 10px 0;
   z-index: 1;
   text-align: center;
-  background: $darker-bg-color;
+  background: $bg-color;
+
+  .container {
+    @extend .flex-center;
+    justify-content: space-between;
+  }
+
+  button {
+    background: $action-color;
+    color: $font-color;
+  }
 }
 
 footer {
   padding: 10px 0;
   text-align: right;
-  background: $darker-bg-color;
+  background: $bg-color;
 }
 
 .signature {
