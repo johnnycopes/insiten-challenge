@@ -88,14 +88,6 @@ $transition: all 250ms ease-in-out;
   box-sizing: border-box;
 }
 
-// html, body {
-//   height: 100%;
-// }
-
-// html {
-//   font-size: 85%;
-// }
-
 body {
   color: $font-color;
   background: $bg-color;
@@ -182,6 +174,7 @@ button {
 .page-wrapper {
   margin: 90px 0 40px;
 }
+
 
 // ===================
 // HEADER/FOOTER
@@ -287,8 +280,7 @@ footer {
 }
 
 
-
-// ------ NEW TARGET ------
+// ------ INDIVIDUAL TARGET PAGE ------
 
 .new-target-form {
   max-width: 400px;
@@ -346,12 +338,6 @@ footer {
 }
 
 
-
-
-
-
-
-
 // ===================
 // UTILITY CLASSES
 // ===================
@@ -367,16 +353,3 @@ footer {
 .pending-approval { background: $pending-approval; }
 .approved { background: $approved; }
 .declined { background: $declined; }
-
-
-// ########################
-// MEDIA QUERIES
-// ########################
-
-@media screen and (min-width: 340px) {}
-
-@media screen and (min-width: 420px) {}
-
-@media screen and (min-width: 620px) {}
-
-@media screen and (min-width: 1020px) {}

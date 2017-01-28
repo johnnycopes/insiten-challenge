@@ -1,9 +1,5 @@
 const app = angular.module('InsitenChallenge', ['ngAnimate', 'ui.router']);
 
-// ================
-// DIRECTIVES
-// ================
-
 
 // ================
 // SERVICES
@@ -12,6 +8,7 @@ const app = angular.module('InsitenChallenge', ['ngAnimate', 'ui.router']);
 app.factory('storage', function () {
   var service = {};
 
+  // This factory is used to make the targets' info available between states
   service.targets = [
     {
       name: 'J.R. Andersson LLC',
@@ -97,6 +94,7 @@ app.controller('TargetController', function($rootScope, $scope, $stateParams, $s
   $scope.targets = storage.targets;
   $scope.keyContacts = [];
 
+  // This view handles both the 'add new' and 'edit' functionality. This code checks to see if the url contains an existing target name and if so, populates the form fields with the existing information
   if ($stateParams.targetName) {
     $scope.targets = storage.targets;
     for (let i = 0; i < $scope.targets.length; i++) {
@@ -112,6 +110,7 @@ app.controller('TargetController', function($rootScope, $scope, $stateParams, $s
     $scope.performance = $scope.target.financialPerformance;
   }
 
+  // These three functions are for adding or removing key contacts to the target's key contacts array
   $scope.addContact = function(contact) {
     $scope.keyContacts.push(contact);
     $scope.keyContact = "";
@@ -129,6 +128,7 @@ app.controller('TargetController', function($rootScope, $scope, $stateParams, $s
   };
 
   $scope.saveChanges = function() {
+    // The behavior of the submit button also changes depending on if the user is in the 'add new' or 'edit' page. If it's 'edit', update the target's info in the main targets array. Otherwise, push the target info to the array
     let target = {
       name: $scope.name,
       status: $scope.status,
