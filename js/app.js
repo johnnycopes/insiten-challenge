@@ -81,44 +81,73 @@ app.factory('storage', function () {
 
 app.controller('HomeController', function($rootScope, $scope, $stateParams, $state, storage) {
   $scope.targets = storage.targets;
+
   $scope.delete = function(target) {
     let index = $scope.targets.indexOf(target);
     $scope.targets.splice(index, 1);
   };
+
+  $scope.edit = function(target) {
+    $state.go('edit_target', {targetName: target});
+  };
 });
 
-app.controller('NewTargetController', function($rootScope, $scope, $stateParams, $state, storage) {
+
+app.controller('TargetController', function($rootScope, $scope, $stateParams, $state, storage) {
   $scope.targets = storage.targets;
   $scope.keyContacts = [];
+
+  if ($stateParams.targetName) {
+    $scope.targets = storage.targets;
+    for (let i = 0; i < $scope.targets.length; i++) {
+      if ($scope.targets[i].name === $stateParams.targetName) {
+        $scope.targetIndex = i;
+        $scope.target = $scope.targets[i];
+      }
+    }
+    $scope.name = $scope.target.name;
+    $scope.status = $scope.target.status;
+    $scope.description = $scope.target.companyInfo;
+    $scope.keyContacts = $scope.target.keyContacts;
+    $scope.performance = $scope.target.financialPerformance;
+  }
 
   $scope.addContact = function(contact) {
     $scope.keyContacts.push(contact);
     $scope.keyContact = "";
   };
 
+  $scope.addContactOnEnter = function(keyEvent) {
+    if (keyEvent.which === 13) {
+      $scope.addContact($scope.keyContact);
+    }
+  };
+
   $scope.deleteContact = function(contact) {
-    let index = $scope.targets.indexOf(contact);
+    let index = $scope.keyContacts.indexOf(contact);
     $scope.keyContacts.splice(index, 1);
   };
 
-  $scope.addNewTarget = function() {
-    if ($scope.keyContacts.length >= 1) {
-      $scope.targets.push({
-        name: $scope.name,
-        status: $scope.status,
-        companyInfo: $scope.description,
-        keyContacts: $scope.keyContacts,
-        financialPerformance: $scope.performance
-      });
-      $scope.name = "";
-      $scope.status = "";
-      $scope.description = "";
-      $scope.keyContacts = [];
-      $scope.performance = "";
+  $scope.saveChanges = function() {
+    let target = {
+      name: $scope.name,
+      status: $scope.status,
+      companyInfo: $scope.description,
+      keyContacts: $scope.keyContacts,
+      financialPerformance: $scope.performance
+    };
+    if ($stateParams.targetName) {
+      $scope.targets[$scope.targetIndex] = target;
     }
     else {
-      alert('You must enter at least one key contact');
+      $scope.targets.push(target);
     }
+    $scope.name = "";
+    $scope.status = "";
+    $scope.description = "";
+    $scope.keyContacts = [];
+    $scope.performance = "";
+    $state.go('home');
   };
 });
 
@@ -140,10 +169,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state({
       name: 'new_target',
       url: '/new_target',
-      templateUrl: 'templates/new_target.html',
-      controller: 'NewTargetController'
+      templateUrl: 'templates/target.html',
+      controller: 'TargetController'
+    })
+  $stateProvider
+    .state({
+      name: 'edit_target',
+      url: '/edit/{targetName}',
+      templateUrl: 'templates/target.html',
+      controller: 'TargetController'
     })
     ;
 
-    $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 });

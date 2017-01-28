@@ -334,16 +334,17 @@ footer {
 }
 
 .key-contact {
-  margin-right: 5px;
+  margin: 0 5px 10px;
   padding: 5px 10px;
   display: inline-block;
   background: $target-bg-color;
+
+  .delete-button {
+    margin: 0 5px 0 0;
+    padding: 5px 10px;
+  }
 }
 
-.delete-button {
-  margin: 0 5px 0 0;
-  padding: 5px 10px;
-}
 
 
 

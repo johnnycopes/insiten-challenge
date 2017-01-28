@@ -213,14 +213,13 @@ footer {
     width: 100%; }
 
 .key-contact {
-  margin-right: 5px;
+  margin: 0 5px 10px;
   padding: 5px 10px;
   display: inline-block;
   background: #3a3b3c; }
-
-.delete-button {
-  margin: 0 5px 0 0;
-  padding: 5px 10px; }
+  .key-contact .delete-button {
+    margin: 0 5px 0 0;
+    padding: 5px 10px; }
 
 .fl {
   float: left; }
